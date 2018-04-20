@@ -14,7 +14,7 @@ makeCacheMatrix <- function(x = matrix()) {
     inverse <<- NULL
   }
   
-  # This funciton updates the inverse of x.
+  # This function updates the inverse of x.
   # It is assumed that the i is actually the inverse of x.
   set.inverse <- function(i) inverse <<- i
   
@@ -29,7 +29,7 @@ makeCacheMatrix <- function(x = matrix()) {
   )
 }
 
-# This function takes in a CacheMatrix and returns its mean.
+## This function takes in a CacheMatrix and returns its mean.
 cacheSolve <- function(x, ...) {
   # Check whether the cached inverse exists.
   if (is.null(x$get.inverse())) {
