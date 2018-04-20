@@ -34,8 +34,10 @@ cacheSolve <- function(x, ...) {
   # Check whether the cached inverse exists.
   if (is.null(x$get.inverse())) {
     # If there is no cached inverse, update the cache.
-    x$set.inverse(solve(x$get.matrix()))
     print("Calculating the inverse!")
+    
+    inverse <- solve(x$get.matrix(), ...)
+    x$set.inverse(inverse)
   } else {
     print("Using the cached inverse!")
   }
