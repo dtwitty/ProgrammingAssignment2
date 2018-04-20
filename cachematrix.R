@@ -29,7 +29,7 @@ makeCacheMatrix <- function(x = matrix()) {
   )
 }
 
-## This function takes in a CacheMatrix and returns its mean.
+## This function takes in a CacheMatrix and returns its inverse.
 cacheSolve <- function(x, ...) {
   # Check whether the cached inverse exists.
   if (is.null(x$get.inverse())) {
