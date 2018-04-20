@@ -16,7 +16,7 @@ makeCacheMatrix <- function(x = matrix()) {
   
   # This funciton updates the inverse of x.
   # It is assumed that the i is actually the inverse of x.
-  set.inverse <- function(i, ...) inverse <<- solve(x, ...)
+  set.inverse <- function(i) inverse <<- i
   
   get.matrix <- function() x
   get.inverse <- function() inverse
@@ -34,7 +34,7 @@ cacheSolve <- function(x, ...) {
   # Check whether the cached inverse exists.
   if (is.null(x$get.inverse())) {
     # If there is no cached inverse, update the cache.
-    x$set.inverse(solve(x$get.matrix))
+    x$set.inverse(solve(x$get.matrix()))
   }
   
   # By this point, x is guaranteed to have a cached inverse.
